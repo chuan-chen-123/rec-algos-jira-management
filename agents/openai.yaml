@@ -1,0 +1,4 @@
+interface:
+  display_name: "Rec Algos Jira Management"
+  short_description: "Create and refine clear Rec Algos Jira work"
+  default_prompt: "Use $rec-algos-jira-management to draft a story or epic and verify its Jira fields."
