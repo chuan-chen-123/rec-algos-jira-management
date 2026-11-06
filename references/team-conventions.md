@@ -1,6 +1,6 @@
 # Rec Algos conventions
 
-These are the team's working conventions distilled from Chuan's Jira guidance on November 5, 2026. They are not a statement of company-wide Jira policy. Current explicit instructions and verified site settings take precedence.
+These are the team's working conventions distilled from Chuan's Jira guidance on November 5–6, 2026. They are not a statement of company-wide Jira policy. Current explicit instructions and verified site settings take precedence.
 
 ## Defaults to resolve in the recipient's environment
 
@@ -9,11 +9,12 @@ These are the team's working conventions distilled from Chuan's Jira guidance on
 | Jira site | `https://stitchfix.atlassian.net` |
 | Execution project | `RALGOS` — Recommendation Algos |
 | Team field | **Recommendation Algorithms** |
+| Story Point Estimate on new Stories | **2**, unless the requester explicitly supplies a different valid estimate. This is a starting default, not a reviewed effort commitment. |
 | Product planning records | `CX` ideas, linked as native related issues when relevant |
 | Access | Connected Atlassian plugin first; authorized browser fallback for unsupported operations |
 | Release | Intended fiscal work quarter; use [fiscal quarters](fiscal-quarters.md) for `FYnnQn` naming and month mapping |
 
-Verify the site's actual Team custom field, team identity, issue types, release IDs and edit permissions. This package deliberately contains no account IDs, tokens, private personnel files, current staffing plan or fixed epic keys. It grants no access or permission changes.
+Verify the site's actual Team and numeric Story point estimate fields, team identity, issue types, release IDs and edit permissions. Preserve existing estimates on edits; backfill missing values only within a requested scope. A supplied valid estimate, including 0, takes precedence over the default. Apply this default to Stories, rather than automatically estimating epics, legacy Tasks or subtasks. This package deliberately contains no account IDs, tokens, private personnel files, current staffing plan or fixed epic keys. It grants no access or permission changes.
 
 ## Canonical work-type labels
 

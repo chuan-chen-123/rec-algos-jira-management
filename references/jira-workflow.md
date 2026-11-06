@@ -4,7 +4,7 @@
 
 Use the recipient's connected Atlassian plugin for supported operations. Discover the currently exposed tools and their schemas; do not rely on a previous session's tool names, account IDs or field IDs. If an operation is unavailable, state the limitation and use an authorized browser fallback when available. Drafting can proceed without live access; label unverified fields accordingly.
 
-Confirm the site/project and read the target before editing. Resolve the actual team and editable Team field. Prefer assignable-user lookup when selecting a named assignee. Inspect actual issue types, parents, releases, link types and transitions as needed. Use existing IDs already verified in this task rather than repeatedly rediscovering them.
+Confirm the site/project and read the target before editing. Resolve the actual team, editable Team field and numeric Story point estimate field. Team-managed Story point estimate and company-managed Story Points can be different fields; use the target project's actual creation metadata, not a remembered custom-field ID. Prefer assignable-user lookup when selecting a named assignee. Inspect actual issue types, parents, releases, link types and transitions as needed. Use existing IDs already verified in this task rather than repeatedly rediscovering them.
 
 ## Reliable reads
 
@@ -17,7 +17,7 @@ Confirm the site/project and read the target before editing. Resolve the actual 
 
 Create or reuse the epic before attaching children. Check for matching work using actual outcome, surface/cohort, artifact and acceptance scope. Read candidate matches before deciding they are duplicates.
 
-Send only the intended fields. Multi-value fields are often replaced rather than appended: preserve the full intended label/link/component set. Set Team on standard issues and epics; verify subtask inheritance rather than forcing an unsupported edit.
+Send only the intended fields. Multi-value fields are often replaced rather than appended: preserve the full intended label/link/component set. Set Team on standard issues and epics; verify subtask inheritance rather than forcing an unsupported edit. Include the numeric estimate on every new Story using the team default when no explicit value is supplied. Keep the estimate in its Jira field rather than only in the description.
 
 Link verified Product ideas using native Jira relationships, not only a URL in the description. Preserve existing relationships and avoid duplicate links. A template or this skill never grants permission to send messages, create access, change workflows or expand a release.
 
@@ -43,7 +43,7 @@ Board API results can lag after a move or include backlog issues in a board resp
 
 ## Verification and handoff
 
-Read the requested fields after saving; edit responses may omit custom fields. For Team, verify the actual stored team identity, including inherited values. Confirm parent, labels, release membership and Product links as applicable. Check rich-content preservation after description edits.
+Read the requested fields after saving; edit responses may omit custom fields. For every created Story, explicitly read back Story point estimate and verify it equals the supplied estimate or team default. A successful create response without the field is not estimate verification. For Team, verify the actual stored team identity, including inherited values. Confirm parent, labels, release membership and Product links as applicable. Check rich-content preservation after description edits.
 
 For a large operation, keep a private execution record of scoped keys, before/after values, applied patches, partial failures and verification. Save it in the recipient's chosen task/workspace location, outside the distributed skill; no personal agent directory is required.
 

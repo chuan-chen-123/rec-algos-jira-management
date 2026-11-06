@@ -52,6 +52,7 @@ Keep structured metadata in Jira fields. Descriptions do not repeat work-type la
 | Work type / labels | Apply the team's canonical work-type label and preserve unrelated useful labels. Classify by the deliverable/planning workstream, not an implementation verb. |
 | Parent | Match the actual outcome and scope to the right epic. Retain subtasks under their standard-issue parent; check the containing epic as well. |
 | Team | Set Recommendation Algorithms for Rec Algos epics and standard issues. Verify subtasks inherit the correct team. |
+| Story Point Estimate | Set the numeric field on every new Story using the [team default](references/team-conventions.md#defaults-to-resolve-in-the-recipients-environment), unless the requester supplies another estimate. Verify the saved value; preserve existing estimates during edits. |
 | Fix version | Set the fix version from the intended fiscal work quarter using the fiscal-quarter reference: Q2 is November–January; Q3 is February–April. Resolve the fiscal year, and leave genuinely unscheduled backlog work unversioned. |
 | Product priority | Add the appropriate native linked issue where a verified Product mapping exists. Preserve the relation's meaning; a dependency, supporting contribution and direct deliverable are different. Missing matches stay explicit. |
 | Description | Purpose, scope and verifiable acceptance criteria; essential context and sources retained; no duplicated field metadata. |
@@ -60,7 +61,7 @@ A consolidated epic can contain different work types. Within one agreed workstre
 
 ## Apply and finish
 
-Prepare a concrete field/content patch, preserving unrelated values and user edits. For creation, check for existing matching work, resolve required fields and parent, create once, and retain the returned key. For audits, distinguish missing, incorrect, inherited, intentionally blank and unverified fields.
+Prepare a concrete field/content patch, preserving unrelated values and user edits. For creation, check for existing matching work, resolve required fields and parent, include Story Point Estimate for every Story, create once, and retain the returned key. For audits, distinguish missing, incorrect, inherited, intentionally blank and unverified fields.
 
 For board visibility or placement requests, follow the board-placement checks in [provider workflow](references/jira-workflow.md); verify fix-version membership and actual board placement separately.
 
