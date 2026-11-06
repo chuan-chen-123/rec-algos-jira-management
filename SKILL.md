@@ -62,6 +62,8 @@ A consolidated epic can contain different work types. Within one agreed workstre
 
 Prepare a concrete field/content patch, preserving unrelated values and user edits. For creation, check for existing matching work, resolve required fields and parent, create once, and retain the returned key. For audits, distinguish missing, incorrect, inherited, intentionally blank and unverified fields.
 
+For board visibility or placement requests, follow the board-placement checks in [provider workflow](references/jira-workflow.md); verify fix-version membership and actual board placement separately.
+
 Verify the saved state and complete coverage. Check the requested changes and preservation of assignees, statuses, labels, release membership, relationships and rich content where relevant. Preserve concurrent edits; reconcile an affected planning source only within the authorized scope. Do not reopen completed work to make an old ticket resemble a new template.
 
 Finish with links to the created/updated issues, a concise change summary and specific unresolved decisions. State actual counts only after complete enumeration and verification. A draft, attempted call or successful-looking outer response is not proof of a saved Jira update.

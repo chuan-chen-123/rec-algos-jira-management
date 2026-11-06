@@ -31,6 +31,16 @@ After a timeout or ambiguous response, read the actual target before retrying. C
 
 Preserve concurrent user changes. If a parent or scope changes during an audit, inspect the current record/history, avoid overwriting it from an old snapshot, and reconcile affected planning/epic text when authorized. Do not attribute a change to a particular actor without evidence.
 
+## Board placement and visibility
+
+Fix-version membership and board placement are separate. A Story can have the intended quarter version and still be in the backlog; setting the version does not prove that it appears on the board. Check both when diagnosing visibility or verifying a requested board move. This check does not itself authorize moving backlog work.
+
+Before reporting a board task complete, compare the scoped issue keys and release membership with the intended board and backlog. Inspect the board's saved filter, active view filters, mapped column statuses and epic grouping where they affect visibility. Verify the result in the user's actual filtered board view, expanding relevant groups as needed.
+
+Prefer the connected Atlassian plugin for supported reads and writes. If the requested action is unsupported, explain the limitation briefly and use an authorized browser fallback. On the observed team-managed Rec Algos board, moving backlog work required Jira's Move work item → Board action; verify the current available capability rather than assuming that limitation is permanent.
+
+Board API results can lag after a move or include backlog issues in a board response. Inspect returned caveats and do not treat a version query or broad board response alone as proof of card visibility. Resolve discrepancies in Jira's live board/backlog UI. After an ambiguous move, inspect the actual placement before retrying. If verification remains unavailable, report the placement as unverified.
+
 ## Verification and handoff
 
 Read the requested fields after saving; edit responses may omit custom fields. For Team, verify the actual stored team identity, including inherited values. Confirm parent, labels, release membership and Product links as applicable. Check rich-content preservation after description edits.
