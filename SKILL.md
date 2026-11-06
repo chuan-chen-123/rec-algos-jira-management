@@ -53,7 +53,7 @@ Keep structured metadata in Jira fields. Descriptions do not repeat work-type la
 | Parent | Match the actual outcome and scope to the right epic. Retain subtasks under their standard-issue parent; check the containing epic as well. |
 | Team | Set Recommendation Algorithms for Rec Algos epics and standard issues. Verify subtasks inherit the correct team. |
 | Story Point Estimate | Set the numeric field on every new Story using the [team default](references/team-conventions.md#defaults-to-resolve-in-the-recipients-environment), unless the requester supplies another estimate. Verify the saved value; preserve existing estimates during edits. |
-| Fix version | Set the fix version from the intended fiscal work quarter using the fiscal-quarter reference: Q2 is November–January; Q3 is February–April. Resolve the fiscal year, and leave genuinely unscheduled backlog work unversioned. |
+| Fix version | For new Stories, default to the fiscal quarter of the creation timestamp in America/Los_Angeles; an explicit target quarter/month or instruction to leave unversioned overrides this. Use the fiscal-quarter reference, resolve the project version, and verify the saved value. Preserve existing versions on unrelated edits. |
 | Product priority | Add the appropriate native linked issue where a verified Product mapping exists. Preserve the relation's meaning; a dependency, supporting contribution and direct deliverable are different. Missing matches stay explicit. |
 | Description | Purpose, scope and verifiable acceptance criteria; essential context and sources retained; no duplicated field metadata. |
 

@@ -17,7 +17,7 @@ Confirm the site/project and read the target before editing. Resolve the actual 
 
 Create or reuse the epic before attaching children. Check for matching work using actual outcome, surface/cohort, artifact and acceptance scope. Read candidate matches before deciding they are duplicates.
 
-Send only the intended fields. Multi-value fields are often replaced rather than appended: preserve the full intended label/link/component set. Set Team on standard issues and epics; verify subtask inheritance rather than forcing an unsupported edit. Include the numeric estimate on every new Story using the team default when no explicit value is supplied. Keep the estimate in its Jira field rather than only in the description.
+Send only the intended fields. Multi-value fields are often replaced rather than appended: preserve the full intended label/link/component set. Set Team on standard issues and epics; verify subtask inheritance rather than forcing an unsupported edit. Include the numeric estimate on every new Story using the team default when no explicit value is supplied. Keep the estimate in its Jira field rather than only in the description. For each new Story, resolve and set the fix version using the creation timestamp's fiscal quarter in America/Los_Angeles unless explicitly overridden; follow the fiscal-quarter reference.
 
 Link verified Product ideas using native Jira relationships, not only a URL in the description. Preserve existing relationships and avoid duplicate links. A template or this skill never grants permission to send messages, create access, change workflows or expand a release.
 
@@ -43,7 +43,7 @@ Board API results can lag after a move or include backlog issues in a board resp
 
 ## Verification and handoff
 
-Read the requested fields after saving; edit responses may omit custom fields. For every created Story, explicitly read back Story point estimate and verify it equals the supplied estimate or team default. A successful create response without the field is not estimate verification. For Team, verify the actual stored team identity, including inherited values. Confirm parent, labels, release membership and Product links as applicable. Check rich-content preservation after description edits.
+Read the requested fields after saving; edit responses may omit custom fields. For every created Story, explicitly read back Story point estimate and verify it equals the supplied estimate or team default. A successful create response without the field is not estimate verification. Also read back the new Story's fix version and verify it matches the creation-quarter default or explicit override. For Team, verify the actual stored team identity, including inherited values. Confirm parent, labels, release membership and Product links as applicable. Check rich-content preservation after description edits.
 
 For a large operation, keep a private execution record of scoped keys, before/after values, applied patches, partial failures and verification. Save it in the recipient's chosen task/workspace location, outside the distributed skill; no personal agent directory is required.
 

@@ -12,7 +12,7 @@ These are the team's working conventions distilled from Chuan's Jira guidance on
 | Story Point Estimate on new Stories | **2**, unless the requester explicitly supplies a different valid estimate. This is a starting default, not a reviewed effort commitment. |
 | Product planning records | `CX` ideas, linked as native related issues when relevant |
 | Access | Connected Atlassian plugin first; authorized browser fallback for unsupported operations |
-| Release | Intended fiscal work quarter; use [fiscal quarters](fiscal-quarters.md) for `FYnnQn` naming and month mapping |
+| Release | Creation timestamp's fiscal quarter in America/Los_Angeles for new Stories, unless explicitly overridden; use [fiscal quarters](fiscal-quarters.md) for `FYnnQn` naming and month mapping |
 
 Verify the site's actual Team and numeric Story point estimate fields, team identity, issue types, release IDs and edit permissions. Preserve existing estimates on edits; backfill missing values only within a requested scope. A supplied valid estimate, including 0, takes precedence over the default. Apply this default to Stories, rather than automatically estimating epics, legacy Tasks or subtasks. This package deliberately contains no account IDs, tokens, private personnel files, current staffing plan or fixed epic keys. It grants no access or permission changes.
 
@@ -41,4 +41,4 @@ Jira assignee identifies delivery ownership, not everyone who reviews or contrib
 
 Subtasks inherit Team from their parent on the verified Rec Algos site; direct Team edits on subtasks are rejected. Check inheritance through the actual parent, and preserve hierarchy.
 
-Use [fiscal quarters](fiscal-quarters.md) for all scheduling and fix-version decisions. Planned quarter, not ticket creation date or priority ID, determines version membership. Preserve completed history and independently queued backlog work.
+Use [fiscal quarters](fiscal-quarters.md) for all scheduling and fix-version decisions. New Stories default to the creation timestamp's fiscal quarter in America/Los_Angeles. An explicit target quarter/month or request to leave unversioned takes precedence. Do not use priority IDs to derive versions or backfill existing tickets without authorization; preserve completed history.
