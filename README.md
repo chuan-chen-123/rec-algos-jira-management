@@ -5,9 +5,11 @@ A standalone skill for drafting, creating and reviewing Rec Algos Jira epics, st
 ## What it includes
 
 - Epic → Story → Subtask structure and concise writing templates.
-- Checks for assignee, work-type label, parent epic, Team, fix version and Product-priority links.
+- Checks for assignee, parent epic, Team, fix version and Product-priority links.
+- Labels restricted to `experimentation-analysis`, `ai-enablement`, `engineering-pipelines` and `modeling-research`, including cleanup of form and pod labels on authorized targets.
 - Recommendation Algorithms team conventions.
-- Fiscal-quarter scheduling: FY27Q2 is November 2026–January 2027; FY27Q3 is February–April 2027. The intended work quarter determines the version.
+- Fix versions default to the original Jira creation timestamp's fiscal quarter in America/Los_Angeles for new Epics/Stories and missing versions during authorized cleanup. Explicit targets or intentional unversioned choices override the default; existing version choices and completed history are preserved. FY27Q2 is November 2026–January 2027; FY27Q3 is February–April 2027.
+- After Story creation or cleanup, ask once whether to move remaining backlog Stories to the board. An already explicit move instruction proceeds without another question; verify placement separately from fix-version membership.
 - Guidance for preserving original tickets, comments, attachments and subtask history.
 
 ## Install in Codex
@@ -43,6 +45,7 @@ Connect your own Atlassian account for live Jira actions. Drafting does not requ
 - [Story and epic templates](references/issue-writing.md)
 - [Fiscal-quarter mapping](references/fiscal-quarters.md)
 - [Live Jira workflow](references/jira-workflow.md)
+- [Verification scenarios](references/verification-scenarios.md)
 - [History and hierarchy](references/history-and-hierarchy.md)
 
 This repository contains no credentials or private Virtual Me files. Installing the skill does not grant Jira access. Team conventions are working guidance; current explicit instructions and verified project settings take precedence.

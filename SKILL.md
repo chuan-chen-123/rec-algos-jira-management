@@ -9,6 +9,8 @@ Make each ticket understandable to the person doing the work: what changes, why 
 
 Read [team conventions](references/team-conventions.md) for Rec Algos defaults. For writing or reviewing descriptions, read [templates and examples](references/issue-writing.md). For live Jira reads or writes, read [provider workflow](references/jira-workflow.md). For scheduling or fix-version decisions, read [fiscal quarters](references/fiscal-quarters.md). For ticket replacement, consolidation or bulk restructuring, also read [history and hierarchy](references/history-and-hierarchy.md).
 
+When validating changes to this skill, use the [verification scenarios](references/verification-scenarios.md) to check release, label and placement decisions.
+
 ## Establish the requested work
 
 Distinguish the requested mode:
@@ -49,11 +51,11 @@ Keep structured metadata in Jira fields. Descriptions do not repeat work-type la
 |---|---|
 | Summary | Clear verb/outcome; no planning priority prefix such as `[P01]`. Meaningful workstream prefixes can remain. |
 | Assignee | Confirmed delivery owner, resolved to the correct assignable account. Unknown stays unassigned; preserve existing assignments unless a change is requested or supported. An instruction to leave unassigned tickets unassigned takes precedence over proposed staffing. |
-| Work type / labels | Apply the team's canonical work-type label and preserve unrelated useful labels. Classify by the deliverable/planning workstream, not an implementation verb. |
+| Work type / labels | Labels may contain only `experimentation-analysis`, `ai-enablement`, `engineering-pipelines` and `modeling-research`. Classify by the workstream under [team conventions](references/team-conventions.md#canonical-work-type-labels). Remove other values on created or explicitly cleaned targets; do not add pod, `shared`, provenance or other labels. |
 | Parent | Match the actual outcome and scope to the right epic. Retain subtasks under their standard-issue parent; check the containing epic as well. |
 | Team | Set Recommendation Algorithms for Rec Algos epics and standard issues. Verify subtasks inherit the correct team. |
 | Story Point Estimate | Set the numeric field on every new Story using the [team default](references/team-conventions.md#defaults-to-resolve-in-the-recipients-environment), unless the requester supplies another estimate. Verify the saved value; preserve existing estimates during edits. |
-| Fix version | For new Stories, default to the fiscal quarter of the creation timestamp in America/Los_Angeles; an explicit target quarter/month or instruction to leave unversioned overrides this. Use the fiscal-quarter reference, resolve the project version, and verify the saved value. Preserve existing versions on unrelated edits. |
+| Fix version | For new Epics/Stories and missing versions on unfinished Epics/Stories in an authorized cleanup, use the creation timestamp's fiscal quarter in America/Los_Angeles unless an explicit target or unversioned choice overrides it. Apply the [fiscal-quarter rules](references/fiscal-quarters.md), including parent alignment for subtasks. Preserve existing version choices and completed history; a missing value is not an intentional unversioned choice. |
 | Product priority | Add the appropriate native linked issue where a verified Product mapping exists. Preserve the relation's meaning; a dependency, supporting contribution and direct deliverable are different. Missing matches stay explicit. |
 | Description | Purpose, scope and verifiable acceptance criteria; essential context and sources retained; no duplicated field metadata. |
 
@@ -63,8 +65,8 @@ A consolidated epic can contain different work types. Within one agreed workstre
 
 Prepare a concrete field/content patch, preserving unrelated values and user edits. For creation, check for existing matching work, resolve required fields and parent, include Story Point Estimate for every Story, create once, and retain the returned key. For audits, distinguish missing, incorrect, inherited, intentionally blank and unverified fields.
 
-For board visibility or placement requests, follow the board-placement checks in [provider workflow](references/jira-workflow.md); verify fix-version membership and actual board placement separately.
+After authorized creation or cleanup, ask once for the batch whether to move scoped Stories still in backlog onto the board, naming and linking them. Complete the content/field work before asking. If placement was already explicitly authorized, perform and verify it without asking again. Follow [provider workflow](references/jira-workflow.md#board-placement-and-visibility); a current-quarter fix version alone does not authorize a move.
 
-Verify the saved state and complete coverage. Check the requested changes and preservation of assignees, statuses, labels, release membership, relationships and rich content where relevant. Preserve concurrent edits; reconcile an affected planning source only within the authorized scope. Do not reopen completed work to make an old ticket resemble a new template.
+Verify the saved state and complete coverage. Check requested changes, the four-value label allowlist, and preservation of assignees, statuses, release membership, relationships and rich content. Preserve concurrent edits; reconcile an affected planning source only within the authorized scope. Do not reopen completed work to make an old ticket resemble a new template.
 
-Finish with links to the created/updated issues, a concise change summary and specific unresolved decisions. State actual counts only after complete enumeration and verification. A draft, attempted call or successful-looking outer response is not proof of a saved Jira update.
+Before reporting creation or cleanup complete, verify scoped fix versions and that saved labels contain only the four allowed values. Verify actual board placement when a move was authorized; otherwise include the backlog-to-board question for remaining backlog Stories. Finish with issue links, a concise change summary and specific unresolved decisions. State actual counts only after complete enumeration and verification. A draft, attempted call or successful-looking outer response is not proof of a saved Jira update.

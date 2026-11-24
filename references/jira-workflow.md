@@ -17,7 +17,7 @@ Confirm the site/project and read the target before editing. Resolve the actual 
 
 Create or reuse the epic before attaching children. Check for matching work using actual outcome, surface/cohort, artifact and acceptance scope. Read candidate matches before deciding they are duplicates.
 
-Send only the intended fields. Multi-value fields are often replaced rather than appended: preserve the full intended label/link/component set. Set Team on standard issues and epics; verify subtask inheritance rather than forcing an unsupported edit. Include the numeric estimate on every new Story using the team default when no explicit value is supplied. Keep the estimate in its Jira field rather than only in the description. For each new Story, resolve and set the fix version using the creation timestamp's fiscal quarter in America/Los_Angeles unless explicitly overridden; follow the fiscal-quarter reference.
+Send only the intended fields. Multi-value fields are often replaced rather than appended: preserve the intended link/component sets, and keep labels within the four-value allowlist in team conventions. Existing pod/provenance/other labels are not exempt during authorized cleanup. Set Team on standard issues and epics; verify subtask inheritance rather than forcing an unsupported edit. Include the numeric estimate on every new Story using the team default when no explicit value is supplied. Keep the estimate in its Jira field rather than only in the description. Resolve missing versions during creation and authorized cleanup under the fiscal-quarter reference; an intake item created by someone else is not exempt from that cleanup check.
 
 Link verified Product ideas using native Jira relationships, not only a URL in the description. Preserve existing relationships and avoid duplicate links. A template or this skill never grants permission to send messages, create access, change workflows or expand a release.
 
@@ -33,6 +33,10 @@ Preserve concurrent user changes. If a parent or scope changes during an audit, 
 
 ## Board placement and visibility
 
+After creating or cleaning Stories, ask once for the batch whether to move the scoped Stories still in backlog onto the board, naming and linking them. Finish and verify the content/field work before asking, so the placement decision is the remaining step. Leave placement unchanged until the requester answers. If the requester already explicitly authorized the move, perform and verify it without asking again. If no scoped Story remains in backlog or the requester explicitly chose backlog retention, do not ask a redundant question. Separately authorized maintenance retains its standing placement scope.
+
+For an authorized move, verify subtasks under their parent Story on the board; do not force a separate move when their placement follows the parent. Epics appear as parent/grouping context rather than ordinary Story cards. Preserve statuses, assignees and hierarchy: placement does not start execution or allocate an owner. A read-only review or passive form submission does not trigger a move or new automation.
+
 Fix-version membership and board placement are separate. A Story can have the intended quarter version and still be in the backlog; setting the version does not prove that it appears on the board. Check both when diagnosing visibility or verifying a requested board move. This check does not itself authorize moving backlog work.
 
 Before reporting a board task complete, compare the scoped issue keys and release membership with the intended board and backlog. Inspect the board's saved filter, active view filters, mapped column statuses and epic grouping where they affect visibility. Verify the result in the user's actual filtered board view, expanding relevant groups as needed.
@@ -43,7 +47,7 @@ Board API results can lag after a move or include backlog issues in a board resp
 
 ## Verification and handoff
 
-Read the requested fields after saving; edit responses may omit custom fields. For every created Story, explicitly read back Story point estimate and verify it equals the supplied estimate or team default. A successful create response without the field is not estimate verification. Also read back the new Story's fix version and verify it matches the creation-quarter default or explicit override. For Team, verify the actual stored team identity, including inherited values. Confirm parent, labels, release membership and Product links as applicable. Check rich-content preservation after description edits.
+Read the requested fields after saving; edit responses may omit custom fields. For every created Story, explicitly read back Story point estimate and verify it equals the supplied estimate or team default. A successful create response without the field is not estimate verification. Also read back the new Story's fix version and verify it matches the creation-quarter default or explicit override. For Team, verify the actual stored team identity, including inherited values. Confirm parent, labels, release membership and Product links as applicable; apply the [new-Story label cleanup](team-conventions.md#canonical-work-type-labels). Check rich-content preservation after description edits.
 
 For a large operation, keep a private execution record of scoped keys, before/after values, applied patches, partial failures and verification. Save it in the recipient's chosen task/workspace location, outside the distributed skill; no personal agent directory is required.
 

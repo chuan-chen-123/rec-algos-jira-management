@@ -1,6 +1,6 @@
 # Fiscal quarters and fix versions
 
-For a new Story, default the fix version to the fiscal quarter containing its creation timestamp in America/Los_Angeles. An explicitly requested target quarter/month or instruction to leave the Story unversioned overrides this default. Use the team's month-based planning convention below.
+For a new Epic or Story, default the fix version to the fiscal quarter containing its Jira creation timestamp in America/Los_Angeles. During an authorized cleanup, apply the same missing-value rule to the scoped unfinished Epics and Stories, including form-created items and items converted to Stories. An explicit target quarter/month or intentional unversioned choice overrides the default; preserve existing version choices and completed history. A blank field alone does not establish an intentional unversioned choice. Use the team's month-based planning convention below.
 
 | Fiscal quarter | Planning months | FY27 example | Fix version |
 |---|---|---|---|
@@ -16,9 +16,9 @@ A fiscal year runs from August of the preceding calendar year through July of th
 - When the requester says the story is planned for a named fiscal quarter, use its matching `FYnnQn` fix version. A story created in November for February work belongs to `FY27Q3`, not `FY27Q2`.
 - If only a target month is supplied, derive the fiscal quarter from that month and year. January 2027 maps to `FY27Q2`; April 2027 to `FY27Q3`; July 2027 to `FY27Q4`.
 - If the request says only “Q2” or “Q3,” resolve the fiscal year from the supplied plan or scheduling context. Ask when the year is genuinely ambiguous. When no target quarter or month is supplied, use the creation timestamp rather than asking for a schedule.
-- When no explicit schedule is supplied, derive the default from the creation timestamp in America/Los_Angeles and resolve the matching Jira version. For example, November 6, 2026 maps to `FY27Q2`; January 31, 2027 is still `FY27Q2`; February 1, 2027 maps to `FY27Q3`. Absence of a target date is not a reason to leave a new Story unversioned. Leave it unversioned only when explicitly requested.
+- When no explicit schedule is supplied, derive the default from the Jira creation timestamp in America/Los_Angeles, not the cleanup/conversion timestamp, and resolve the matching Jira version. For example, November 6, 2026 maps to `FY27Q2`; January 31, 2027 is still `FY27Q2`; February 1, 2027 maps to `FY27Q3`. Do not leave an in-scope missing version blank merely because the issue already existed when cleanup began.
 - This creation default does not authorize backfilling or changing existing tickets outside the requested scope. Historical priority IDs do not determine version membership.
 - If work spans quarters, clarify the intended delivery quarter or use independently accepted Story slices where justified. Avoid automatically assigning multiple versions or copying every epic version to every child.
 - Epics spanning quarters can contain stories with different versions. Keep each story's planned quarter explicit; align a Subtask with its parent Story unless a separately agreed schedule requires otherwise.
-- Resolve the existing Jira project version by name. If the requested version does not exist, create it as part of an authorized scheduling/create request when permitted; otherwise report that specific gap. Ticket creation and version membership do not imply release, launch or completion.
+- Resolve the existing Jira project version by name. If the required default or explicit version does not exist, create it as part of the authorized creation, scheduling or scoped cleanup when permitted; otherwise report that specific gap. Verify the saved field after writing. Version membership does not imply release, launch, board placement or completion.
 - Change existing version membership only within the requested scheduling or maintenance scope. Preserve completed historical assignments unless explicitly asked to change them.
